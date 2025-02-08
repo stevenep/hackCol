@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Games</title>
+    <link rel="stylesheet" href="gamestyles.css">
+</head>
+<body>
+    <header>
+        <h1>Fun Learning Games</h1>
+        <div id="scoreDisplay">Total Score: <span id="totalScore">0</span></div>
+    </header>
+
+    <nav id="mainMenu">
+        <button class="menu-btn" onclick="showGame('memory')">Memory Game</button>
+        <button class="menu-btn" onclick="showGame('spelling')">Spelling Bee</button>
+        <button class="menu-btn" onclick="showGame('math')">Math Challenge</button>
+    </nav>
+
+    <main>
+        <section id="memory-game" class="game-section">
+            <h2>Memory Game</h2>
+            <p class="instructions">Match pairs of cards by flipping them over two at a time.</p>
+            <div class="difficulty-selector">
+                <button onclick="setDifficulty('memory', 'easy')">Easy</button>
+                <button onclick="setDifficulty('memory', 'medium')">Medium</button>
+                <button onclick="setDifficulty('memory', 'hard')">Hard</button>
+            </div>
+            <div id="memory-board" class="game-board"></div>
+            <div class="score">Score: <span id="memory-score">0</span></div>
+        </section>
+
+        <section id="spelling-game" class="game-section">
+            <h2>Spelling Bee</h2>
+            <p class="instructions">Listen to the word and spell it correctly!</p>
+            <div class="difficulty-selector">
+                <button onclick="setDifficulty('spelling', 'easy')">Easy</button>
+                <button onclick="setDifficulty('spelling', 'medium')">Medium</button>
+                <button onclick="setDifficulty('spelling', 'hard')">Hard</button>
+            </div>
+            <div id="spelling-board" class="game-board">
+                <button id="speak-word" id="myButton">Hear Word</button>
+                <input type="text" id="spelling-input" placeholder="Type your answer">
+                <button onclick="checkSpelling()" id="myButton">Submit</button>
+            </div>
+            <div class="score">Score: <span id="spelling-score">0</span></div>
+        </section>
+
+        <section id="math-game" class="game-section">
+            <h2>Math Challenge</h2>
+            <p class="instructions">Solve the math problems quickly!</p>
+            <div class="difficulty-selector">
+                <button onclick="setDifficulty('math', 'easy')">Easy</button>
+                <button onclick="setDifficulty('math', 'medium')">Medium</button>
+                <button onclick="setDifficulty('math', 'hard')">Hard</button>
+            </div>
+            <div id="math-board" class="game-board">
+                <div id="math-problem"></div>
+                <input type="number" id="math-input" placeholder="Enter answer">
+                <button onclick="checkMathAnswer()" id="myButton">Submit</button>
+            </div>
+            <div class="score">Score: <span id="math-score">0</span></div>
+        </section>
+    </main>
+
+    <div id="feedback" class="feedback"></div>
+    
+    <script src="gamescript.js"></script>
+</body>
+</html>
+
